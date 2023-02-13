@@ -1,0 +1,88 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+@mixin font($font-Size, $font-family, $font-weight, $color) {
+	font-size: $font-Size;
+	font-family: $font-family;
+	font-weight: $font-weight;
+	color: $color;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	background: linear-gradient(45deg, #e5a4ff, #5832fd, #6f9bff, #02eef4);
+	animation: anim 15s ease infinite;
+	background-size: 400% 400%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+@keyframes anim {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.block {
+	display: flex;
+}
+
+.time,
+.time2,
+.time3 {
+	@include font(80px, Arial, 600, #ffffff);
+}
+.btn {
+	background-color: coral;
+	border: 0px;
+	border-radius: 10px;
+	padding: 10px 20px;
+
+	& .down {
+		@include font(30px, Arial, 500, #ffffff);
+	}
+}
+
+.quantity {
+	@include font(50px, Arial, 600, #ffffff);
+	margin-top: 25px;
+}
+.btn1 {
+	background-color: coral;
+	border: 0px;
+	border-radius: 10px;
+	padding: 20px 20px;
+
+	& .down1 {
+		@include font(30px, Arial, 500, #ffffff);
+	}
+}
+
+.body2 {
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.7);
+	position: absolute;
+	z-index: 100;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.bodyBlur {
+	filter: blur(10px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
